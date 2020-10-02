@@ -12,3 +12,11 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
+
+app.listen(3100, () => {
+  console.log('Server Started!');
+});
+
+app.route('/api/courses').get((request, response) => {
+  response.send(COURSES);
+});
